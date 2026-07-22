@@ -1,0 +1,788 @@
+@import url("https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Tangerine:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Chewy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+
+/* ===========================
+   GLOBAL STYLES
+=========================== */
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --primary: rgb(92, 231, 37);
+  --green: #2d5a3d;
+  --gold: #e1c272;
+  --cream: #faf8f2;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#details,
+#resort,
+#thankyou {
+  scroll-margin-top: 20px;
+}
+
+body {
+  font-family: Montserrat, sans-serif;
+  background: var(--cream);
+}
+
+.container {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+/* ===========================
+   SHARED SECTION TITLES
+=========================== */
+
+.section__title,
+.resort__title {
+  display: inline-block;
+
+  font-family: Satisfy, cursive;
+  font-size: 64px;
+  font-weight: 400;
+  color: var(--green);
+
+  padding: 0 28px 12px;
+  margin-bottom: 40px;
+
+  border-bottom: 3px solid var(--gold);
+
+  text-shadow:
+    0 0 6px rgba(255, 255, 255, 1),
+    0 0 16px rgba(225, 194, 114, 0.7);
+}
+
+/* ===========================
+   NAV BAR
+=========================== */
+
+.nav {
+  display: flex;
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 80px;
+  z-index: 10;
+  width: 97%;
+}
+
+.nav__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgb(254, 255, 254);
+}
+
+.nav__logo {
+  height: 150%;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+  animation: logopulse 1500ms ease-in-out alternate infinite;
+}
+
+@keyframes logopulse {
+    0%{
+        height: 140%;
+    }
+
+    100%{
+        height: 155%;
+    }
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: white;
+
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+
+  text-shadow:
+    0 0 5px rgba(255, 255, 255, 0.8),
+    0 0 10px rgba(255, 255, 255, 0.6);
+
+  transition: 300ms ease;
+}
+
+.nav__link:hover {
+  font-size: 18px;
+  text-decoration: underline;
+}
+
+/* ===========================
+   HERO / HOME SECTION
+=========================== */
+
+#j__home {
+  height: 80vh;
+  width: 100%;
+
+  position: relative;
+  overflow: hidden;
+
+  background-image: url("assets/resort2.jpg");
+  background-size: 85%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#j__home::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to right,
+      var(--cream) 0%,
+      var(--cream) 7.5%,
+      transparent 18%,
+      transparent 82%,
+      var(--cream) 92.5%,
+      var(--cream) 100%
+    ),
+    linear-gradient(
+      to bottom,
+      transparent 76%,
+      var(--cream) 100%
+    );
+}
+
+.hero {
+  height: 100%;
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+  grid-template-rows: 48% 52%;
+
+  padding-top: 105px;
+  text-align: center;
+}
+
+/* Logo group */
+
+.hero__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mclogo {
+  height: 185px;
+  display: block;
+
+  filter:
+    drop-shadow(0 0 8px rgba(255, 255, 255, 1))
+    drop-shadow(0 0 16px rgba(255, 255, 255, 0.8))
+    drop-shadow(0 0 24px rgba(225, 194, 114, 0.8))
+    drop-shadow(0 0 40px rgba(255, 215, 0, 0.5))
+    drop-shadow(0 0 10px rgba(0, 0, 0, 0.9))
+    drop-shadow(0 0 25px rgba(0, 0, 0, 0.9));
+}
+
+/* Names/button group */
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 38px;
+  padding-bottom: 26px;
+}
+
+.header__names {
+  font-family: Satisfy, cursive;
+  font-size: 92px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 1px;
+
+  color: var(--green);
+
+  text-shadow:
+    0 0 6px rgba(255, 255, 255, 1),
+    0 0 14px rgba(255, 255, 255, 0.95),
+    0 0 26px rgba(0, 0, 0, 0.65);
+}
+
+.j__travel__button {
+  padding: 16px 26px 10px;
+
+  border-radius: 999px;
+  border: 1px solid white;
+
+  background: var(--green);
+
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.9);
+
+  cursor: pointer;
+}
+
+.j__travel__button__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--gold);
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.75);
+}
+
+.j__button__down {
+  color: var(--gold);
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.75);
+  animation: upanddown 1000ms ease-in-out alternate infinite;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 2px;
+  padding: 2px;
+}
+
+@keyframes upanddown {
+0%{
+    transform: translateY(0);
+}
+
+100%{
+    transform: translateY(2px);
+}
+}
+
+/* ===========================
+   COUNTDOWN SECTION
+=========================== */
+
+.countdown {
+  height: 20vh;
+  width: 100%;
+
+  display: grid;
+  grid-template-rows: 1fr auto;
+  place-items: center;
+
+  padding: 6px 24px 10px;
+
+  background: var(--cream);
+  text-align: center;
+}
+
+.countdown h2 {
+  margin: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-family: Montserrat, sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1;
+
+  color: var(--green);
+}
+
+#days-left {
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1;
+
+  color: var(--gold);
+}
+
+.countdown__date {
+  margin: 0;
+
+  font-family: Satisfy, cursive;
+  font-size: 36px;
+  line-height: 1;
+
+  color: var(--green);
+}
+
+/* ===========================
+   DETAILS SECTION
+=========================== */
+
+.details {
+  padding: 80px 24px;
+  background: var(--cream);
+}
+
+.details__container {
+  max-width: 1024px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.details__cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.details__card {
+  width: calc((100% - 48px) / 3);
+
+  background: white;
+  border: 1px solid var(--gold);
+  border-radius: 18px;
+
+  padding: 28px 20px;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+  transition: 300ms ease;
+}
+
+.details__card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
+}
+
+.details__icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.details__card__title {
+  font-family: Satisfy, cursive;
+  font-size: 36px;
+  color: var(--green);
+  margin-bottom: 8px;
+}
+
+.details__card__subtitle {
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.details__card__text {
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.details__card__text__2 {
+    padding-top: 16px;
+}
+
+.details__resort__link {
+  display: inline-block;
+  margin-top: 12px;
+
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  color: var(--green);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.details__resort__link:hover {
+  text-decoration: underline;
+}
+
+/* ===========================
+   RESORT GUIDE
+=========================== */
+
+.resort {
+  padding: 80px 24px;
+  background: var(--cream);
+}
+
+.resort__container {
+  max-width: 1024px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.resort__title__name {
+  margin-top: 8px;
+  font-family: Montserrat, sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--green);
+}
+
+.resort__map__text {
+  margin-top: 32px;
+  margin-bottom: 16px;
+  font-family: Montserrat, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--green);
+}
+
+.resort__map {
+  width: 100%;
+  max-width: 850px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 18px;
+  border: 2px solid var(--gold);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.14);
+}
+
+.resort__cards {
+  display: flex;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.resort__card {
+  width: 50%;
+  background: white;
+  border: 1px solid var(--gold);
+  border-radius: 18px;
+  padding: 32px 28px;
+  text-align: left;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.resort__card__title {
+  text-align: center;
+  font-family: Satisfy, cursive;
+  font-size: 36px;
+  color: var(--green);
+}
+
+.resort__card__subtitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Montserrat;
+    color: var(--green);
+    margin-bottom: 28px;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.reminder__text {
+    color: red;
+    font-weight: 600;
+}
+
+.wedding__details__subtitle {
+    padding-top: 16px;
+    padding-bottom: 4px;
+    color: var(--green);
+    font-size: 16px;
+}
+
+.resort__list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.resort__list li {
+  position: relative;
+  padding-left: 36px;
+  margin-bottom: 14px;
+  font-family: Montserrat, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.resort__list li::before {
+  content: "🌺";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.building, .infinity {
+    color: green;
+}
+
+.pool {
+    color: navy;
+}
+
+.cafe {
+    color: brown;
+}
+
+.sports {
+    color: red;
+}
+
+.jerkhut {
+    color: rgba(250, 226, 6, 0.845);
+}
+
+.sunset {
+    color: purple;
+}
+
+.beach {
+    color: pink;
+}
+
+.resort__list li.wedding {
+    color: white;
+    -webkit-text-stroke: 0.07px black;
+     text-shadow:
+    0 0 1px black,
+    0 0 2px black;
+    font-family: Satisfy;
+    font-size: 28px;
+}
+
+.resort__list li.wedding::before {
+  font-family: Montserrat, sans-serif;
+  font-size: 18px;
+  color: initial;
+  -webkit-text-stroke: 0;
+  text-shadow: none;
+}
+
+.things__list {
+  margin-top: 22px;
+}
+
+.things__list li {
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+
+/* ===========================
+   THANK YOU SECTION
+=========================== */
+
+.thankyou {
+  padding: 80px 24px 100px;
+  background: var(--cream);
+}
+
+.thankyou__container {
+  max-width: 1024px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.thankyou__text-box {
+  width: 60%;
+  text-align: center;
+}
+
+.thankyou__text {
+  font-family: Montserrat, sans-serif;
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--green);
+  margin-bottom: 20px;
+}
+
+.thankyou__signature {
+  margin-top: 32px;
+  font-family: Montserrat, sans-serif;
+  font-size: 18px;
+  color: var(--green);
+}
+
+.thankyou__names {
+  margin-top: 12px;
+  font-family: Satisfy, cursive;
+  font-size: 52px;
+  color: var(--green);
+}
+
+.thankyou__image-box {
+  width: 40%;
+}
+
+.thankyou__image {
+  width: 100%;
+  height: auto;
+  display: block;
+
+  border-radius: 24px;
+  border: 2px solid var(--gold);
+
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.16);
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 900px) {
+  .nav__links {
+    gap: 14px;
+  }
+
+  .nav__link {
+    font-size: 14px;
+  }
+
+  .mclogo {
+    height: 165px;
+  }
+
+  .header__names {
+    font-size: 76px;
+  }
+
+  .details__card {
+    width: calc(50% - 12px);
+  }
+
+  .resort__cards {
+    flex-direction: column;
+  }
+
+  .resort__card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav {
+  height: 58px;
+  top: 10px;
+  width: 94%;
+}
+
+.nav__container {
+  justify-content: center;
+  padding: 0 12px;
+}
+
+.nav__logo {
+  height: 78px;
+  animation: none;
+}
+
+  .nav__links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 16px;
+  }
+
+  .nav__link {
+    font-size: 12px;
+  }
+
+  .nav__link:hover {
+    font-size: 12px;
+  }
+
+  #j__home {
+    height: 78vh;
+    background-size: cover;
+  }
+
+  .hero {
+    padding-top: 90px;
+    grid-template-rows: 45% 55%;
+  }
+
+  .mclogo {
+    height: 110px;
+  }
+
+  .header__names {
+    font-size: 48px;
+  }
+
+  .j__travel__button {
+    font-size: 14px;
+    padding: 14px 22px 8px;
+  }
+
+  .countdown {
+    height: 22vh;
+  }
+
+  .countdown h2 {
+    font-size: 22px;
+  }
+
+  #days-left {
+    font-size: 40px;
+  }
+
+  .countdown__date {
+    font-size: 32px;
+  }
+
+  .section__title,
+  .resort__title {
+    font-size: 48px;
+    padding: 0 20px 12px;
+  }
+
+  .details__card {
+    width: 100%;
+  }
+
+  .resort__card {
+    width: 100%;
+  }
+
+  .thankyou__container {
+  flex-direction: column;
+}
+
+.thankyou__text-box,
+.thankyou__image-box {
+  width: 100%;
+}
+
+.thankyou__names {
+  font-size: 44px;
+}
+}

@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="jamaica-styles.css" />
+
+    <script
+      src="https://kit.fontawesome.com/46661a8d42.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Jamaica Wedding</title>
+  </head>
+
+  <body>
+    <!-- NAV BAR -->
+    <nav class="nav">
+      <div class="nav__container">
+        <img
+          src="assets/pparty-logo.png"
+          class="nav__logo nav__logo__jamaica"
+          alt="P Party Logo"
+        />
+
+        <div class="nav__links nav__links__jamaica">
+          <a href="#j__home" class="nav__link nav__link__jamaica">Home</a>
+          <a href="#details" class="nav__link nav__link__jamaica"
+            >Before You Go</a
+          >
+          <a href="#resort" class="nav__link nav__link__jamaica"
+            >Resort Guide</a
+          >
+
+          <a href="#thankyou" class="nav__link nav__link__jamaica">Thank you!</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO IMAGE SECTION -->
+    <header id="j__home">
+      <div class="hero">
+        <div class="hero__logo">
+          <img
+            src="assets/cm-logo.png"
+            class="mclogo"
+            alt="Mike and Courtney Logo"
+          />
+        </div>
+
+        <div class="hero__content">
+          <h1 class="header__names">Courtney & Mike</h1>
+
+          <a href="#details" class="travel__button">
+            <button class="j__travel__button">
+              <span class="j__travel__button__text">TRAVEL DETAILS</span>
+              <span class="j__button__down">
+                <i class="fa-solid fa-angle-down j__button__down"></i>
+              </span>
+            </button>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- COUNTDOWN SECTION -->
+    <section class="countdown">
+      <h2>
+        <span id="days-left"></span>
+        Days Until Jamaica
+      </h2>
+
+      <!-- COUNTDOWN SCRIPT -->
+      <script>
+        const weddingDate = new Date("January 27, 2027 00:00:00").getTime();
+        const today = new Date().getTime();
+        const difference = weddingDate - today;
+        const daysLeft = Math.ceil(difference / (1000 * 60 * 60 * 24));
+
+        document.getElementById("days-left").textContent = daysLeft;
+      </script>
+
+      <p class="countdown__date">January 27, 2027</p>
+    </section>
+
+    <!-- DETAILS SECTION -->
+    <section id="details" class="details">
+      <div class="details__container">
+        <h2 class="section__title">Before You Go</h2>
+
+        <div class="details__cards">
+          <div class="details__card">
+            <div class="details__icon">📅</div>
+            <h3 class="details__card__title">Wedding</h3>
+            <p class="details__card__text wedding__info">
+              January 27, 2027 <br />
+              10:00am <br />
+              Bungalow Lawn <br />
+            </p>
+            <h5 class="wedding__details__subtitle">What to Wear</h5>
+            <p class="details__card__text wedding__info">
+              Think dressy vacation vibes. Hawaiian shirts, button-downs,
+              sundresses, and light, comfortable outfits are perfect. No suits
+              required — just something nice for a beach/resort ceremony.
+            </p>
+          </div>
+
+          <div class="details__card">
+            <div class="details__icon">🏨</div>
+            <h3 class="details__card__title">Resort</h3>
+            <p class="details__card__text">Grand Palladium Jamaica</p>
+
+            <a
+              href="https://www.palladiumhotelgroup.com/en/hoteles/jamaica/jamaicamontegobay/grand-palladium-jamaica-resort-spa"
+              class="details__resort__link"
+              target="_blank"
+            >
+              Resort Link
+            </a>
+          </div>
+
+          <div class="details__card">
+            <div class="details__icon">✈️</div>
+            <h3 class="details__card__title">Airport</h3>
+            <h4 class="details__card__subtitle">Montego Bay, Jamaica</h4>
+            <p class="details__card__text">
+              Plan to fly into Sangster International Airport (MBJ). There is a
+              shuttle that will take you from the airport to the resort.
+              <br />
+            </p>
+            <p class="details__card__text details__card__text__2">
+              <span class="reminder__text">Reminder:</span> passports are
+              required to fly to Jamaica, so please make sure yours is not
+              expired.
+            </p>
+          </div>
+
+          <div class="details__card">
+            <div class="details__icon">🏖️</div>
+            <h3 class="details__card__title">Stay</h3>
+            <p class="details__card__text">
+              We will be staying 1/23 – 2/2, but come down whatever dates work
+              best for you!
+            </p>
+          </div>
+
+          <div class="details__card">
+            <div class="details__icon">🍹</div>
+            <h3 class="details__card__title">All-Inclusive</h3>
+            <h4 class="details__card__subtitle">Food & Drinks Included</h4>
+            <p class="details__card__text">
+              Meals, drinks, entertainment, pools, and beaches are included.
+            </p>
+          </div>
+
+          <div class="details__card">
+            <div class="details__icon">🧳</div>
+            <h3 class="details__card__title">Don't Forget</h3>
+            <h4 class="details__card__subtitle">Packing reminders:</h4>
+            <p class="details__card__text">
+              Passport <br />
+              Sunscreen <br />
+              Sunglasses <br />
+              Hat <br />
+              Swimsuit cover-up <br />
+              Casual clothes for the day <br />
+              Dressier clothes for dinner <br />
+              Cash to tip the workers
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="resort" class="resort">
+      <div class="resort__container">
+        <div class="resort__part1">
+          <h2 class="resort__title">Resort</h2>
+          <h3 class="resort__title__name">
+            Grand Palladium Jamaica Resort & Spa
+          </h3>
+          <p class="resort__map__text">Resort Map:</p>
+          <img src="assets/resort_map_3.jpg" class="resort__map" />
+        </div>
+
+        <div class="resort__cards">
+          <div class="resort__card">
+            <h3 class="resort__card__title">Places to Know</h3>
+            <h4 class="resort__card__subtitle">See map above</h4>
+            <ul class="resort__list">
+              <li class="building">Main Building/Lobby</li>
+              <li class="pool">Main Pool</li>
+              <li class="cafe">Miss Lou's Cafe</li>
+              <li class="infinity">Infinity Terrace & Bar</li>
+              <li class="sports">Sports Bar</li>
+              <li class="jerkhut">Jerk Hut</li>
+              <li class="sunset">Sunset Cove</li>
+              <li class="beach">Las Brisas Beach</li>
+              <li class="wedding">Ceremony - Bungalow Lawn</li>
+            </ul>
+          </div>
+
+          <div class="resort__card">
+            <h3 class="resort__card__title things__to__know">Things to Know</h3>
+            <ul class="resort__list things__list">
+              <li>
+                The resort is fairly large, expect a 5-10 minute walk from your
+                room to the main building/pool
+              </li>
+              <li>
+                There is a coffee shop upstairs of the main building, we are
+                usually there every morning between 7:30-8:00 - best coffee
+                you will ever have
+              </li>
+              <li>
+                Get to the pool early in the morning and leave your towels there
+                to claim a spot before they are all taken
+              </li>
+              <li>
+                Some restaurants may require reservations, the buffets do not.
+                You can make reservations through the Grand Palladium app
+              </li>
+              <li>
+                Every day at noon there are free aqua aerobics/aqua spin classes
+                at the main pool. Bill, Lori, Dan, Courtney, and Rachel are
+                regular participants. They have not been able to convince the
+                other family members to join yet
+              </li>
+              <li>
+                This beach has all of the activities. You can rent paddle
+                boards, kayaks, scuba gear, etc. There is also tubing available
+                for an extra cost
+              </li>
+              <li>
+                The Balcony at night is the perfect spot for late night cards,
+                live music, and karaoke
+              </li>
+              <li>
+                For late night snacks, The Sports Bar is open 24/7 (nachos,
+                pizza, ice cream, onion rings). Room service is also available
+                until 11pm
+              </li>
+              <li>
+                While all-inclusive, tips are appreciated for good service. We
+                usually bring $50-$100 in singles to tip the staff/bartenders
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="thankyou" class="thankyou">
+      <div class="thankyou__container">
+        <div class="thankyou__text-box">
+          <h2 class="section__title">Thank You</h2>
+
+          <p class="thankyou__text">
+            We know traveling to Jamaica is a big commitment, and it means so
+            much that you're spending this week with us.
+          </p>
+
+          <p class="thankyou__text">
+            Other than the ceremony, treat this as your vacation. Relax,
+            explore, and enjoy the resort!
+          </p>
+
+          <p class="thankyou__signature">
+            We can't wait to celebrate with you!
+          </p>
+
+          <p class="thankyou__names">Courtney & Mike</p>
+        </div>
+
+        <div class="thankyou__image-box">
+          <img
+            src="assets/mc-jamaica.jpg"
+            alt="Mike and Courtney in Jamaica"
+            class="thankyou__image"
+          />
+        </div>
+      </div>
+    </section>
+    <script>
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+  }
+
+  window.addEventListener("load", function () {
+    if (!window.location.hash) {
+      setTimeout(function () {
+        window.scrollTo(0, 0);
+      }, 0);
+    }
+  });
+</script>
+  </body>
+</html>
